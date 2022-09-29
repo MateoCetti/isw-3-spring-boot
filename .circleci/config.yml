@@ -28,4 +28,4 @@ workflows:
   maven_test:
     jobs:
       - maven/test:
-          command: 'mvn -B package --file pom.xml'
+          command: '-B package --file pom.xml'
