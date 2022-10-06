@@ -36,4 +36,4 @@ jobs:
         id-token: write
       steps:
         - name: Call Unit Tests
-          run: mvn test --file pom.xml
+          run: mvn -B test
