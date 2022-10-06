@@ -25,3 +25,15 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+  Unit-Test:
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        packages: write
+        # This is used to complete the identity challenge
+        # with sigstore/fulcio when running outside of PRs.
+        id-token: write
+      steps:
+        - name: Call Unit Tests
+          run: mvn test -f "./pom.xml"
